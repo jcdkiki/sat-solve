@@ -1,6 +1,4 @@
-examples/uf20
-examples/uf50
-examples/uf100
-examples/uf250
+examples
+logs
 sat-check
 sat-solve

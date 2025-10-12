@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "parse.h"
 
 task_t task;
@@ -29,11 +30,10 @@ void check_solution()
 
         if (ok == 0) {
             printf("clause #%d failed\n", i);
-            return;
+            free_task(&task);
+            exit(1);
         }
     }
-
-    printf("OK!\n");
 }
 
 int main(int argc, char **argv)
@@ -53,7 +53,6 @@ int main(int argc, char **argv)
     fclose(fptr);
 
     check_solution();
-
     free_task(&task);
     return 0;
 }
